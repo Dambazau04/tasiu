@@ -19,7 +19,12 @@
 <!-- Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <style>
-:root { --primary: #0B5E47; --secondary: #E8A317; --accent: #E8A317; }
+/* === UPDATE THESE COLORS WITH YOUR LOGO COLORS === */
+:root { 
+  --primary: #0B5E47;    /* Replace with your logo's primary color */
+  --secondary: #E8A317;  /* Replace with your logo's secondary color */
+  --accent: #E8A317;     /* Replace with your logo's accent color */
+}
 body { font-family: 'Poppins', sans-serif; background-color: #f0fdf4; }
 .arabic-text { font-family: 'Amiri', serif; direction: rtl; }
 .royal-font { font-family: 'Cinzel', serif; }
@@ -50,12 +55,14 @@ position: absolute; pointer-events: none; z-index: 10;
 .stamp-text-sm { font-size: 8px; letter-spacing: 1px; }
 .stamp-text-lg { font-size: 12px; border-top: 1px solid #b91c1c; border-bottom: 1px solid #b91c1c; margin: 2px 0; padding: 1px 0; }
 #pdf-render-zone { position: absolute; top: -10000px; left: -10000px; z-index: -1; }
+
+/* Report Card Design */
 .report-card-design {
 width: 210mm; min-height: 297mm; background: #fff; padding: 10mm;
-border: 10px solid #0B5E47;
-outline: 5px solid #E8A317; outline-offset: -15px;
+border: 10px solid var(--primary);
+outline: 5px solid var(--secondary); outline-offset: -15px;
 position: relative; box-sizing: border-box;
-background-image: radial-gradient(#0B5E47 0.5px, transparent 0.5px);
+background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px);
 background-size: 20px 20px;
 background-color: #fffff0;
 }
@@ -63,9 +70,11 @@ background-color: #fffff0;
 position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-30deg);
 font-size: 100px; color: rgba(11, 94, 71, 0.05); font-weight: bold; pointer-events: none; white-space: nowrap;
 }
+
+/* ID Card Design */
 .id-card-design {
 width: 2.125in; height: 3.37in;
-background: linear-gradient(135deg, #0B5E47 0%, #E8A317 60%, #0B5E47 100%);
+background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, var(--primary) 100%);
 border-radius: 10px; position: relative; overflow: visible; color: white;
 box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 font-family: 'Poppins', sans-serif;
@@ -74,6 +83,8 @@ font-family: 'Poppins', sans-serif;
 position: absolute; width: 100%; height: 100%; top: 0; left: 0;
 background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23E8A317' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
 }
+
+/* Receipt Design */
 .receipt-design {
 width: 80mm; min-height: 120mm; background: #fff; padding: 5mm;
 border: 1px solid #ccc; position: relative; box-sizing: border-box;
@@ -81,7 +92,7 @@ box-shadow: 0 0 10px rgba(0,0,0,0.1);
 font-family: 'Courier Prime', monospace;
 }
 .tt-cell { min-width: 80px; height: 60px; text-align: center; vertical-align: middle; padding: 4px; font-size: 12px; border: 1px solid #cbd5e1; }
-.tt-header { background: #0B5E47; color: white; font-weight: bold; text-transform: uppercase; font-size: 11px; padding: 8px; }
+.tt-header { background: var(--primary); color: white; font-weight: bold; text-transform: uppercase; font-size: 11px; padding: 8px; }
 .registration-container {
 max-width: 800px; margin: 2rem auto; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden;
 }
@@ -92,13 +103,17 @@ display: flex; background: #f9fafb; border-bottom: 1px solid #e5e7eb;
 flex: 1; text-align: center; padding: 1rem; font-size: 0.9rem; font-weight: 600; color: #9ca3af; border-bottom: 3px solid transparent;
 }
 .step.active {
-color: #0B5E47; border-bottom-color: #0B5E47;
+color: var(--primary); border-bottom-color: var(--primary);
 }
+
+/* Acknowledgement Slip */
 .acknowledgement-slip {
-width: 210mm; min-height: 297mm; background: #fff; padding: 10mm; border: 5px solid #0B5E47; outline: 2px solid #E8A317; outline-offset: -5px; position: relative; box-sizing: border-box; overflow: visible; font-size: 12px;
+width: 210mm; min-height: 297mm; background: #fff; padding: 10mm; border: 5px solid var(--primary); outline: 2px solid var(--secondary); outline-offset: -5px; position: relative; box-sizing: border-box; overflow: visible; font-size: 12px;
 }
+
+/* Admission Letter */
 .admission-letter {
-width: 210mm; min-height: 297mm; background: #fff; padding: 10mm; border: 8px double #0B5E47; position: relative; box-sizing: border-box; background-image: linear-gradient(45deg, rgba(11,94,71,0.02) 25%, transparent 25%), linear-gradient(-45deg, rgba(11,94,71,0.02) 25%, transparent 25%); background-size: 20px 20px; overflow: visible; font-size: 12px;
+width: 210mm; min-height: 297mm; background: #fff; padding: 10mm; border: 8px double var(--primary); position: relative; box-sizing: border-box; background-image: linear-gradient(45deg, rgba(11,94,71,0.02) 25%, transparent 25%), linear-gradient(-45deg, rgba(11,94,71,0.02) 25%, transparent 25%); background-size: 20px 20px; overflow: visible; font-size: 12px;
 }
 </style>
 </head>
@@ -111,9 +126,8 @@ width: 210mm; min-height: 297mm; background: #fff; padding: 10mm; border: 8px do
 <div id="login-section" class="min-h-screen flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] bg-green-900 p-4">
   <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl w-full max-w-md fade-in relative overflow-hidden border-t-8 border-yellow-500">
     <div class="text-center mb-6">
-      <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-green-600 shadow-xl relative z-10">
-        <i class="fas fa-book-quran text-5xl text-green-700"></i>
-      </div>
+      <!-- Logo in Login -->
+      <img src="YOUR_LOGO_URL_HERE" alt="School Logo" class="w-24 h-24 mx-auto mb-4 object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/96?text=Logo'">
       <h2 class="text-xl font-bold text-green-800 arabic-text mb-1" dir="rtl">كلية تاسع آدم المجتمع</h2>
       <h3 class="text-sm font-bold text-gray-800 royal-font tracking-widest leading-tight">TASIU ADAMU COMMUNITY COLLEGE<br>OF SCIENCE AND QUR'ANIC STUDIES</h3>
       <p class="text-[10px] text-yellow-600 font-bold uppercase mt-2">Motto: Knowledge is Power</p>
@@ -228,7 +242,8 @@ width: 210mm; min-height: 297mm; background: #fff; padding: 10mm; border: 8px do
 <div id="dashboard-section" class="hidden min-h-screen flex bg-gray-50">
   <aside id="sidebar" class="bg-green-900 text-white w-64 fixed h-full z-40 flex flex-col shadow-2xl transition-transform transform -translate-x-full md:translate-x-0">
     <div class="p-6 text-center bg-green-950 border-b border-green-800 relative overflow-hidden">
-      <i class="fas fa-mosque absolute -right-4 -bottom-4 text-8xl text-green-800 opacity-20"></i>
+      <!-- School Logo in Sidebar -->
+      <img src="YOUR_LOGO_URL_HERE" alt="School Logo" class="w-16 h-16 mx-auto mb-2 object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/64?text=Logo'">
       <h1 class="font-bold text-lg royal-font text-yellow-400 leading-tight">TASIU ADAMU</h1>
       <p class="text-[9px] tracking-widest text-gray-300 uppercase mt-1">Science & Qur'anic Studies</p>
     </div>
@@ -821,27 +836,29 @@ window.downloadReportPDF = async () => {
     page.className = 'report-card-design';
     page.innerHTML = `
       <div class="report-watermark">TASIU ADAMU</div>
-      <div style="text-align: center; border-bottom: 3px double #0B5E47; padding-bottom: 15px; margin-bottom: 20px;">
+      <div style="text-align: center; border-bottom: 3px double var(--primary); padding-bottom: 15px; margin-bottom: 20px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <img src="${s.photo || 'https://via.placeholder.com/150'}" style="width: 100px; height: 100px; border: 3px solid #E8A317; object-fit: cover; border-radius: 10px;" onerror="this.src='https://via.placeholder.com/150'">
+          <img src="${s.photo || 'https://via.placeholder.com/150'}" style="width: 100px; height: 100px; border: 3px solid var(--secondary); object-fit: cover; border-radius: 10px;" onerror="this.src='https://via.placeholder.com/150'">
           <div style="text-align: center;">
-            <h1 style="font-family: 'Amiri', serif; font-size: 26px; color: #0B5E47; margin:0;" dir="rtl">كلية تاسع آدم المجتمع للعلوم والقرآن الكريم -- غارو</h1>
-            <h2 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: bold; color: #0B5E47; margin: 5px 0;">TASIU ADAMU COMMUNITY COLLEGE<br>OF SCIENCE AND QUR'ANIC STUDIES</h2>
-            <p style="font-size: 11px; font-weight: bold; color: #E8A317; text-transform: uppercase;">Motto: Knowledge is Power</p>
+            <!-- School Logo in Report Card -->
+            <img src="YOUR_LOGO_URL_HERE" style="width: 80px; height: auto; margin-bottom: 10px;" onerror="this.onerror=null; this.src='https://via.placeholder.com/80?text=Logo'">
+            <h1 style="font-family: 'Amiri', serif; font-size: 26px; color: var(--primary); margin:0;" dir="rtl">كلية تاسع آدم المجتمع للعلوم والقرآن الكريم -- غارو</h1>
+            <h2 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: bold; color: var(--primary); margin: 5px 0;">TASIU ADAMU COMMUNITY COLLEGE<br>OF SCIENCE AND QUR'ANIC STUDIES</h2>
+            <p style="font-size: 11px; font-weight: bold; color: var(--secondary); text-transform: uppercase;">Motto: Knowledge is Power</p>
             <p style="font-size: 10px;">Address: Gwarzo Road, Sabuwar Kasuwa Garo, Kabo LGA, Kano State</p>
             <p style="font-size: 10px;">GSM: 09063121276, 08033471719</p>
           </div>
           <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=VERIFY:${s.studentId}" style="width: 100px; height: 100px; border: 2px solid #000;">
         </div>
       </div>
-      <div style="background: #f0fdf4; border: 1px solid #0B5E47; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+      <div style="background: #f0fdf4; border: 1px solid var(--primary); padding: 15px; margin-bottom: 20px; border-radius: 8px;">
         <table style="width: 100%; font-size: 14px;">
           <tr><td><strong>Name:</strong> ${s.name.toUpperCase()}</td><td><strong>Session:</strong> ${sess}</td><td><strong>Term:</strong> ${currentTerm}</td></tr>
           <tr><td><strong>Class:</strong> ${s.class}</td><td><strong>No. in Class:</strong> ${students.length}</td><td><strong>Class of Result:</strong> ${resultClass}</td></tr>
         </table>
       </div>
-      <table style="width: 100%; font-size: 13px; border-collapse: collapse; border: 2px solid #0B5E47;">
-        <thead><tr style="background: #0B5E47; color: white; text-transform: uppercase;"><th style="padding: 10px; text-align: left;">Subject</th><th style="padding: 10px; width: 50px;">CA</th><th style="padding: 10px; width: 50px;">Exam</th><th style="padding: 10px; width: 60px;">Total</th><th style="padding: 10px; width: 50px;">Grade</th></tr></thead>
+      <table style="width: 100%; font-size: 13px; border-collapse: collapse; border: 2px solid var(--primary);">
+        <thead><tr style="background: var(--primary); color: white; text-transform: uppercase;"><th style="padding: 10px; text-align: left;">Subject</th><th style="padding: 10px; width: 50px;">CA</th><th style="padding: 10px; width: 50px;">Exam</th><th style="padding: 10px; width: 60px;">Total</th><th style="padding: 10px; width: 50px;">Grade</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
       <div style="margin-top: 10px; display: flex; gap: 10px;">
@@ -849,7 +866,7 @@ window.downloadReportPDF = async () => {
           <strong>GRADE KEYS:</strong><br>A (70-100) - Excellent<br>B (60-69) - Very Good<br>C (50-59) - Credit<br>D (40-49) - Pass<br>F (0-39) - Fail
         </div>
         <div style="flex: 1; border: 1px solid #ccc; padding: 10px; font-size: 12px; background: #fff; text-align: center;">
-          <strong>TERM AVERAGE</strong><br><span style="font-size: 24px; font-weight: bold; color: #0B5E47;">${s.avg}</span>
+          <strong>TERM AVERAGE</strong><br><span style="font-size: 24px; font-weight: bold; color: var(--primary);">${s.avg}</span>
         </div>
       </div>
       <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -859,7 +876,7 @@ window.downloadReportPDF = async () => {
         </div>
         <div style="width: 30%; text-align: center; position: relative;">
           <div class="stamp-box" style="right: 20px; bottom: 30px;"><div class="stamp-text-sm">TASIU ADAMU</div><div class="stamp-text-lg">APPROVED</div><div class="stamp-text-sm">COLLEGE</div></div>
-          <div style="border-bottom: 2px solid #0B5E47; margin-bottom: 5px;"></div><strong>Principal's Signature</strong>
+          <div style="border-bottom: 2px solid var(--primary); margin-bottom: 5px;"></div><strong>Principal's Signature</strong>
         </div>
       </div>
       <div style="position: absolute; bottom: 5mm; width: 100%; text-align: center; font-size: 9px; color: #999; border-top: 1px solid #eee; padding-top: 5px;">Developed by Abu-Abdurrahman CodeVerge Technology</div>
@@ -895,6 +912,8 @@ window.downloadIDCards = async () => {
     card.innerHTML = `
       <div class="id-card-pattern"></div>
       <div style="text-align: center; padding: 10px; position: relative; z-index: 10;">
+        <!-- School Logo in ID Card -->
+        <img src="YOUR_LOGO_URL_HERE" style="width: 50px; height: auto; margin: 0 auto 5px;" onerror="this.onerror=null; this.src='https://via.placeholder.com/50?text=Logo'">
         <div style="font-family: 'Amiri'; font-size: 10px; color: #fbbf24; margin-bottom: 2px;" dir="rtl">كلية تاسع آدم المجتمع</div>
         <div style="font-size: 8px; font-weight: bold; line-height: 1.1;">TASIU ADAMU COMMUNITY<br>COLLEGE</div>
         <div style="margin: 10px auto; width: 80px; height: 80px; border-radius: 50%; border: 3px solid #fbbf24; overflow: hidden; background: white;">
@@ -969,8 +988,10 @@ window.downloadReceiptPDF = (data) => {
   el.className = 'receipt-design';
   el.innerHTML = `
     <div style="text-align: center; border-bottom: 2px dashed #ccc; padding-bottom: 10px; margin-bottom: 10px;">
-      <div style="font-family: 'Amiri'; font-size: 12px; color: #0B5E47;" dir="rtl">كلية تاسع آدم المجتمع</div>
-      <div style="font-weight: bold; font-size: 10px; color: #0B5E47;">TASIU ADAMU COMMUNITY COLLEGE</div>
+      <!-- School Logo in Receipt -->
+      <img src="YOUR_LOGO_URL_HERE" style="width: 60px; height: auto; margin: 0 auto 5px;" onerror="this.onerror=null; this.src='https://via.placeholder.com/60?text=Logo'">
+      <div style="font-family: 'Amiri'; font-size: 12px; color: var(--primary);" dir="rtl">كلية تاسع آدم المجتمع</div>
+      <div style="font-weight: bold; font-size: 10px; color: var(--primary);">TASIU ADAMU COMMUNITY COLLEGE</div>
       <div style="font-size: 8px; margin-top: 2px;">Gwarzo Road, Garo, Kano State</div>
     </div>
     <div style="text-align: center; font-weight: bold; text-transform: uppercase; font-size: 12px; margin: 10px 0; border: 1px solid #000; padding: 2px;">Payment Receipt</div>
@@ -981,7 +1002,7 @@ window.downloadReceiptPDF = (data) => {
       <div><strong>Received From:</strong><br>${data.name} (${data.class})</div>
       <div style="margin-top: 5px;"><strong>Payment For:</strong><br>${data.purpose}</div>
     </div>
-    <div style="margin: 15px 0; border: 2px solid #0B5E47; padding: 8px; text-align: center; font-weight: bold; font-size: 16px; background: #f0fdf4;">₦${Number(data.amount).toLocaleString()}</div>
+    <div style="margin: 15px 0; border: 2px solid var(--primary); padding: 8px; text-align: center; font-weight: bold; font-size: 16px; background: #f0fdf4;">₦${Number(data.amount).toLocaleString()}</div>
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${data.no}" style="width: 40px; height: 40px;">
       <div style="text-align: center; font-size: 8px;"><p>Authorized Signature</p><div style="height: 1px; background: #000; width: 60px; margin: 20px auto 2px;"></div><p>Bursary Dept.</p></div>
@@ -1005,7 +1026,7 @@ window.loadParentPayments = async () => {
   const q = query(collection(db, "payments"), where("name", "==", currentUser.child.name), orderBy("timestamp", "desc"));
   const snap = await getDocs(q);
   list.innerHTML = '';
-  if(snap.empty) { list.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-gray-500">No payment records found.</td></tr>'; return; }
+  if(snap.empty) { list.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-gray-500">No payment records found.}}</div>'; return; }
   snap.forEach(d => {
     const p = d.data();
     const safe = JSON.stringify(p).replace(/"/g, '&quot;');
@@ -1108,7 +1129,7 @@ window.addSubject=async()=>{const c=document.getElementById('sub-class').value,n
 window.loadSubjects=async()=>{const c=document.getElementById('sub-class').value;if(!c)return;onSnapshot(query(collection(db,"subjects"),where("class","==",c)),(s)=>{let h='';s.forEach(d=>h+=`<li class="bg-gray-50 p-2 rounded border flex justify-between text-sm items-center">${d.data().name} <button onclick="deleteSubject('${d.id}')" class="text-red-500 hover:bg-red-50 p-1"><i class="fas fa-times"></i></button></li>`);document.getElementById('subject-list').innerHTML=h;});};
 window.deleteSubject=async(id)=>await deleteDoc(doc(db,"subjects",id));
 window.loadMarkSubjects=async()=>{const c=document.getElementById('mark-class').value;if(!c)return;const s=await getDocs(query(collection(db,"subjects"),where("class","==",c)));const el=document.getElementById('mark-sub');el.innerHTML='<option>Select...</option>';s.forEach(d=>{const o=document.createElement('option');o.value=d.id;o.innerText=d.data().name;el.appendChild(o);});};
-window.loadMarks=async()=>{const c=document.getElementById('mark-class').value,sub=document.getElementById('mark-sub').value;if(!c||!sub)return;const stu=await getDocs(query(collection(db,"students"),where("class","==",c)));const sc=await getDocs(query(collection(db,"scores"),where("class","==",c),where("subjectId","==",sub),where("session","==",currentSession),where("term","==",currentTerm)));const map={};sc.forEach(d=>map[d.data().studentId]=d.data());let h='';stu.forEach(d=>{const s=map[d.id]||{ca:'',exam:''};h+=`<tr data-sid="${d.id}" class="border-b"><td class="p-2">${d.data().name}</td><td class="p-2"><input type="number" class="w-full border p-1 text-center" value="${s.ca}" onchange="saveMark(this)"></td><td class="p-2"><input type="number" class="w-full border p-1 text-center mark-exam-input" value="${s.exam}" onchange="saveMark(this)"></td><td class="p-2 text-center font-bold text-green-700 total">${(Number(s.ca)||0)+(Number(s.exam)||0)}</td></tr>`;});document.getElementById('mark-list').innerHTML=h;};
+window.loadMarks=async()=>{const c=document.getElementById('mark-class').value,sub=document.getElementById('mark-sub').value;if(!c||!sub)return;const stu=await getDocs(query(collection(db,"students"),where("class","==",c)));const sc=await getDocs(query(collection(db,"scores"),where("class","==",c),where("subjectId","==",sub),where("session","==",currentSession),where("term","==",currentTerm)));const map={};sc.forEach(d=>map[d.data().studentId]=d.data());let h='';stu.forEach(d=>{const s=map[d.id]||{ca:'',exam:''};h+=`<tr data-sid="${d.id}" class="border-b"><td class="p-2">${d.data().name}</td><td class="p-2"><input type="number" class="w-full border p-1 text-center" value="${s.ca}" onchange="saveMark(this)"></td><td class="p-2"><input type="number" class="w-full border p-1 text-center mark-exam-input" value="${s.exam}" onchange="saveMark(this)"></td><td class="p-2 text-center font-bold text-green-700 total">${(Number(s.ca)||0)+(Number(s.exam)||0)}</div>');});document.getElementById('mark-list').innerHTML=h;};
 window.saveMark=async(i)=>{const tr=i.closest('tr'),sid=tr.dataset.sid,c=document.getElementById('mark-class').value,sub=document.getElementById('mark-sub').value,ins=tr.querySelectorAll('input'),ca=Number(ins[0].value),ex=Number(ins[1].value);tr.querySelector('.total').innerText=ca+ex;await setDoc(doc(db,"scores",`${sid}_${sub}_${currentTerm.replace(/\s/g,'')}`),{studentId:sid,class:c,subjectId:sub,session:currentSession,term:currentTerm,ca,exam:ex},{merge:true});showToast("Saved");};
 window.toggleMarkInputType=()=>{const b=document.getElementById('mark-toggle-btn'),ins=document.querySelectorAll('.mark-exam-input');if(b.innerText.includes("CBT")){b.innerText="Switch to Manual";ins.forEach(i=>i.setAttribute('readonly',true));}else{b.innerText="Switch to CBT";ins.forEach(i=>i.removeAttribute('readonly'));}};
 window.loadTimetable=async()=>{const c=document.getElementById('tt-class').value;if(!c)return;const s=await getDoc(doc(db,"timetables",c));if(s.exists())document.getElementById('tt-grid').innerHTML=s.data().html;else renderTTGrid();};
@@ -1307,12 +1328,14 @@ window.downloadAcknowledgement = () => {
   const slip = document.createElement('div');
   slip.className = 'acknowledgement-slip';
   slip.innerHTML = `
-    <div style="text-align: center; border-bottom: 3px solid #0B5E47; padding-bottom: 15px; margin-bottom: 20px;">
-      <h1 style="font-family: 'Cinzel'; font-size: 24px; color: #0B5E47;">TASIU ADAMU COMMUNITY COLLEGE</h1>
+    <div style="text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 20px;">
+      <!-- School Logo in Acknowledgement Slip -->
+      <img src="YOUR_LOGO_URL_HERE" style="width: 80px; height: auto; margin: 0 auto 10px;" onerror="this.onerror=null; this.src='https://via.placeholder.com/80?text=Logo'">
+      <h1 style="font-family: 'Cinzel'; font-size: 24px; color: var(--primary);">TASIU ADAMU COMMUNITY COLLEGE</h1>
       <p style="font-size: 12px;">Gwarzo Road, Sabuwar Kasuwa Garo, Kabo LGA, Kano State</p>
     </div>
     <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
-      <img src="${data.photo}" style="width: 120px; height: 120px; border: 4px solid #E8A317; border-radius: 10px; object-fit: cover;">
+      <img src="${data.photo}" style="width: 120px; height: 120px; border: 4px solid var(--secondary); border-radius: 10px; object-fit: cover;">
       <div>
         <p><strong>Application No:</strong> ${data.appNo}</p>
         <p><strong>Full Name:</strong> ${data.name}</p>
@@ -1322,7 +1345,7 @@ window.downloadAcknowledgement = () => {
       </div>
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${data.appNo}" style="width: 100px; height: 100px;">
     </div>
-    <div style="border: 2px dashed #0B5E47; padding: 20px; text-align: center; font-family: 'Courier Prime';">
+    <div style="border: 2px dashed var(--primary); padding: 20px; text-align: center; font-family: 'Courier Prime';">
       <p>This acknowledges receipt of your application. Please keep this slip for future reference.</p>
       <p>You will be notified of the admission decision via this portal.</p>
     </div>
@@ -1447,14 +1470,16 @@ window.downloadAdmissionLetter = async (id) => {
   const letter = document.createElement('div');
   letter.className = 'admission-letter';
   letter.innerHTML = `
-    <div style="text-align: center; border-bottom: 3px solid #0B5E47; padding-bottom: 15px; margin-bottom: 20px;">
-      <h1 style="font-family: 'Cinzel'; font-size: 28px; color: #0B5E47;">TASIU ADAMU COMMUNITY COLLEGE</h1>
+    <div style="text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 20px;">
+      <!-- School Logo in Admission Letter -->
+      <img src="YOUR_LOGO_URL_HERE" style="width: 100px; height: auto; margin: 0 auto 10px;" onerror="this.onerror=null; this.src='https://via.placeholder.com/100?text=Logo'">
+      <h1 style="font-family: 'Cinzel'; font-size: 28px; color: var(--primary);">TASIU ADAMU COMMUNITY COLLEGE</h1>
       <p style="font-size: 12px;">Gwarzo Road, Sabuwar Kasuwa Garo, Kabo LGA, Kano State</p>
     </div>
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-      <img src="${app.photo}" style="width: 100px; height: 100px; border: 4px solid #E8A317; border-radius: 10px;" onerror="this.src='https://via.placeholder.com/150'">
+      <img src="${app.photo}" style="width: 100px; height: 100px; border: 4px solid var(--secondary); border-radius: 10px;" onerror="this.src='https://via.placeholder.com/150'">
       <div style="text-align: right;">
-        <h2 style="font-size: 22px; font-weight: bold; color: #0B5E47;">ADMISSION LETTER</h2>
+        <h2 style="font-size: 22px; font-weight: bold; color: var(--primary);">ADMISSION LETTER</h2>
         <p>Ref: ${app.appNo}</p>
       </div>
     </div>
@@ -1534,14 +1559,16 @@ window.downloadAdmissionLetterFromStatus = () => {
     const letter = document.createElement('div');
     letter.className = 'admission-letter';
     letter.innerHTML = `
-      <div style="text-align: center; border-bottom: 3px solid #0B5E47; padding-bottom: 15px; margin-bottom: 20px;">
-        <h1 style="font-family: 'Cinzel'; font-size: 28px; color: #0B5E47;">TASIU ADAMU COMMUNITY COLLEGE</h1>
+      <div style="text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 20px;">
+        <!-- School Logo in Admission Letter -->
+        <img src="YOUR_LOGO_URL_HERE" style="width: 100px; height: auto; margin: 0 auto 10px;" onerror="this.onerror=null; this.src='https://via.placeholder.com/100?text=Logo'">
+        <h1 style="font-family: 'Cinzel'; font-size: 28px; color: var(--primary);">TASIU ADAMU COMMUNITY COLLEGE</h1>
         <p style="font-size: 12px;">Gwarzo Road, Sabuwar Kasuwa Garo, Kabo LGA, Kano State</p>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        <img src="${app.photo}" style="width: 100px; height: 100px; border: 4px solid #E8A317; border-radius: 10px;" onerror="this.src='https://via.placeholder.com/150'">
+        <img src="${app.photo}" style="width: 100px; height: 100px; border: 4px solid var(--secondary); border-radius: 10px;" onerror="this.src='https://via.placeholder.com/150'">
         <div style="text-align: right;">
-          <h2 style="font-size: 22px; font-weight: bold; color: #0B5E47;">ADMISSION LETTER</h2>
+          <h2 style="font-size: 22px; font-weight: bold; color: var(--primary);">ADMISSION LETTER</h2>
           <p>Ref: ${app.appNo}</p>
         </div>
       </div>
